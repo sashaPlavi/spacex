@@ -9,8 +9,8 @@ function App() {
     <div className="App">
       <Header></Header>
       <Main></Main>
-      <Footer></Footer>
       <p>Learn React</p>
+      <Footer></Footer>
     </div>
   );
 }
