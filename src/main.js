@@ -1,11 +1,13 @@
 import React, { Component } from "react";
 import { fechMission } from "./services/fetchMission";
+import "./main.css";
+import Mission from "./Mission";
 
 class Main extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      mission: null
+      mission: {}
     };
   }
 
@@ -14,11 +16,16 @@ class Main extends Component {
   }
 
   getMission() {
-    fechMission.mission();
+    fechMission.mission().then(res => {
+      this.setState({ mission: res });
+    });
   }
   render() {
+    console.log(this.state.mission);
+
     return (
-      <div>
+      <div className="main">
+        <Mission />
         <p>this is main</p>
       </div>
     );
