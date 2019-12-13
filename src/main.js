@@ -7,7 +7,7 @@ class Main extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      mission: {}
+      missions: {}
     };
   }
 
@@ -17,15 +17,15 @@ class Main extends Component {
 
   getMission() {
     fechMission.mission().then(res => {
-      this.setState({ mission: res });
+      this.setState({ missions: res });
     });
   }
   render() {
-    console.log(this.state.mission);
+    console.log(this.state.missions);
 
     return (
       <div className="main">
-        <Mission />
+        <Mission missions={this.state.missions} />
         <p>this is main</p>
       </div>
     );
