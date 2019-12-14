@@ -1,5 +1,6 @@
 import React from "react";
 import "./Header.css";
+import { Link } from "react-router-dom";
 
 function Header() {
   return (
@@ -41,9 +42,9 @@ function Header() {
             <a className="dropdown-item" href="#Launch Pads">
               Launch Pads
             </a>
-            <a className="dropdown-item" href="#Missions">
-              Missions
-            </a>
+            <p className="dropdown-item">
+              <Link to="mission">Missions</Link>
+            </p>
             <a className="dropdown-item" href="#Payloads">
               Payloads
             </a>

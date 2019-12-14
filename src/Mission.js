@@ -1,59 +1,70 @@
-import React from "react";
+import React, { Component } from "react";
 import "./Missions.css";
-
-function mission(props) {
-  let missions = props.missions;
-
-  function handelDesc(e) {
-    e.preventDefault();
-    console.log("bla");
+import { fechMission } from "./services/fetchMission";
+class Mission extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      missions: {}
+    };
   }
 
-  if (missions[0]) {
-    return (
-      <div className="missons">
-        <div className="container">
-          <div className="row">
-            {missions.map(mission => {
-              return (
-                <div className="col-4  mb-1">
-                  <div className="card h-100 ">
-                    <div className="card-body ">
-                      <h5 className="card-title">
-                        mission name: {mission.name}
-                      </h5>
-                      <h6 className="card-subtitle  text-muted">
-                        manufacturers: {mission.manufacturers}
-                      </h6>
-                      {/* <p className=" overflow-auto">
+  componentDidMount() {
+    this.getMission();
+  }
+
+  getMission() {
+    fechMission.mission().then(res => {
+      this.setState({ missions: res });
+    });
+  }
+  render() {
+    if (this.state.missions[0]) {
+      return (
+        <div className="missons">
+          <div className="container">
+            <div className="row">
+              {this.state.missions.map(mission => {
+                return (
+                  <div className="col-4  mb-1">
+                    <div className="card h-100 ">
+                      <div className="card-body ">
+                        <h5 className="card-title">
+                          mission name: {mission.name}
+                        </h5>
+                        <h6 className="card-subtitle  text-muted">
+                          manufacturers: {mission.manufacturers}
+                        </h6>
+                        {/* <p className=" overflow-auto">
                         description: {mission.description}
-                      </p>
-              */}
-                      <p onClick={handelDesc}>show descriprion</p>
-                      <a target="blank" href={mission.wikipedia}>
-                        <div className=" d-inline "> wikipedia</div>
-                      </a>
-                      <a target="blank" href={mission.website}>
-                        <div className="d-inline"> webseit</div>
-                      </a>
-                      <a target="blank" href={mission.twitter}>
-                        <div className="d-inline"> twitter</div>
-                      </a>
+                        </p>
+                      */}
+
+                        <a target="blank" href={mission.wikipedia}>
+                          <div className=" d-inline "> wikipedia</div>
+                        </a>
+                        <a target="blank" href={mission.website}>
+                          <div className="d-inline"> webseit</div>
+                        </a>
+                        <a target="blank" href={mission.twitter}>
+                          <div className="d-inline"> twitter</div>
+                        </a>
+                      </div>
                     </div>
                   </div>
-                </div>
-              );
-            })}
+                );
+              })}
+            </div>
           </div>
         </div>
-      </div>
-    );
-  } else {
-    return <p>loading...</p>;
+      );
+    } else {
+      return <p>loading...</p>;
+    }
   }
 }
 
-export default mission;
+export default Mission;
 /*
  {missions.map(mission => {
         return (

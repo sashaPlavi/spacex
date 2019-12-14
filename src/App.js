@@ -1,17 +1,22 @@
 import React from "react";
+import { Route, Switch, Redirect } from "react-router-dom";
 import Main from "./Main";
 import "./App.css";
 import Header from "./Header";
 import Footer from "./Footer";
+import Mission from "./Mission";
 
 function App() {
   return (
-    <div className="App">
-      <Header></Header>
-      <Main></Main>
-      <p>Learn React</p>
-      <Footer></Footer>
-    </div>
+    <>
+      <Header />
+      <Switch>
+        <Route path="/mission" component={Mission} />
+        <Route path="/" component={Main} />
+        <Route Redirect="/" />
+      </Switch>
+      <Footer />
+    </>
   );
 }
 
