@@ -2,32 +2,50 @@ import React from "react";
 import "./Missions.css";
 
 function mission(props) {
-  console.log(props);
   let missions = props.missions;
-  console.log(missions);
+
+  function handelDesc(e) {
+    e.preventDefault();
+    console.log("bla");
+  }
 
   if (missions[0]) {
     return (
       <div className="missons">
-        {missions.map(mission => {
-          return (
-            <div className="card">
-              <div className="card-body">
-                <h5 className="card-title">mission name: {mission.name}</h5>
-                <h6 className="card-subtitle mb-2 text-muted">
-                  manufacturers: {mission.manufacturers}
-                </h6>
-                <p className="card-text">description: {mission.descriprion}</p>
-                <a href="#link" className="card-link">
-                  Card link
-                </a>
-                <a href="#another" className="card-link">
-                  Another link
-                </a>
-              </div>
-            </div>
-          );
-        })}
+        <div className="container">
+          <div className="row">
+            {missions.map(mission => {
+              return (
+                <div className="col-4  mb-1">
+                  <div className="card h-100 ">
+                    <div className="card-body ">
+                      <h5 className="card-title">
+                        mission name: {mission.name}
+                      </h5>
+                      <h6 className="card-subtitle  text-muted">
+                        manufacturers: {mission.manufacturers}
+                      </h6>
+                      {/* <p className=" overflow-auto">
+                        description: {mission.description}
+                      </p>
+              */}
+                      <p onClick={handelDesc}>show descriprion</p>
+                      <a target="blank" href={mission.wikipedia}>
+                        <div className=" d-inline "> wikipedia</div>
+                      </a>
+                      <a target="blank" href={mission.website}>
+                        <div className="d-inline"> webseit</div>
+                      </a>
+                      <a target="blank" href={mission.twitter}>
+                        <div className="d-inline"> twitter</div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
       </div>
     );
   } else {

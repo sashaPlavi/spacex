@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { fechMission } from "./services/fetchMission";
-import "./main.css";
+import "./Main.css";
 import Mission from "./Mission";
 
 class Main extends Component {
