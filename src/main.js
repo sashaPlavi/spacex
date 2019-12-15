@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
 import Mission from "./Mission";
 import History from "./History";
+import Cores from "./Cores";
+import Capsules from "./Capsules";
 
 import "./Main.css";
 
@@ -12,6 +14,8 @@ class Main extends Component {
         <Switch>
           <Route path="/mission" component={Mission} />
           <Route path="/history" component={History} />
+          <Route path="/cores" component={Cores} />
+          <Route path="/capsules" component={Capsules} />
         </Switch>
         <p>this is main</p>
       </div>

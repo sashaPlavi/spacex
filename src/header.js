@@ -18,10 +18,10 @@ function Header() {
             spacex
           </button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a className="dropdown-item" href="/action">
+            <a className="dropdown-item" href="/capsules">
               Capsules
             </a>
-            <a className="dropdown-item" href="/action">
+            <a className="dropdown-item" href="/cores">
               Cores
             </a>
             <a className="dropdown-item" href="/else">
@@ -43,7 +43,7 @@ function Header() {
               Launch Pads
             </a>
             <p className="dropdown-item">
-              <Link to="mission">Missions</Link>
+              <Link to="/mission"> Missions </Link>
             </p>
             <a className="dropdown-item" href="/Payloads">
               Payloads
