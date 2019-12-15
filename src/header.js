@@ -24,7 +24,7 @@ function Header() {
             <a className="dropdown-item" href="/cores">
               Cores
             </a>
-            <a className="dropdown-item" href="/else">
+            <a className="dropdown-item" href="/dragons">
               Dragons
             </a>
             <a className="dropdown-item" href="/History">
