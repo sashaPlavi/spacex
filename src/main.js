@@ -5,6 +5,7 @@ import History from "./History";
 import Cores from "./Cores";
 import Capsules from "./Capsules";
 import Dragons from "./Dragons";
+import Info from "./info";
 
 import "./Main.css";
 
@@ -18,6 +19,7 @@ class Main extends Component {
           <Route path="/cores" component={Cores} />
           <Route path="/capsules" component={Capsules} />
           <Route path="/dragons" component={Dragons} />
+          <Route path="/info" component={Info} />
         </Switch>
         <p>this is main</p>
       </div>
