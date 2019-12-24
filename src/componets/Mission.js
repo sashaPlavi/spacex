@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./Missions.css";
-import { fechMission } from "./services/fetchMission";
+import { fechMission } from "../services/fetchMission";
 class Mission extends Component {
   constructor(props) {
     super(props);

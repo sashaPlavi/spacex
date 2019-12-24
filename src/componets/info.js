@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./Info.css";
-import { fetchInfo } from "./services/fetchInfo";
+import { fetchInfo } from "../services/fetchInfo";
 class Info extends Component {
   constructor(props) {
     super(props);

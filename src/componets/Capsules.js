@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./Missions.css";
-import { fechcapsules } from "./services/fetchcapsules";
+import { fechcapsules } from "../services/fetchcapsules";
 class Capsules extends Component {
   constructor(props) {
     super(props);

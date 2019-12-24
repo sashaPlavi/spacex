@@ -1,37 +1,39 @@
 import React, { Component } from "react";
 import "./Missions.css";
-import { fechhistory } from "./services/fetchHistory";
-class History extends Component {
+import { fechdragons } from "../services/fetchdragons";
+class Dragons extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      history: {}
+      dragons: {}
     };
   }
 
   componentDidMount() {
-    this.getHistory();
+    this.getCores();
   }
 
-  getHistory() {
-    fechhistory.history().then(res => {
-      this.setState({ history: res });
+  getCores() {
+    fechdragons.dragons().then(res => {
+      this.setState({ dragons: res });
     });
   }
   render() {
-    console.log(this.state.history);
+    console.log(this.state.dragons);
 
-    if (this.state.history[0]) {
+    if (this.state.dragons[0]) {
       return (
         <div className="history">
           have something
           <div className="container">
             <div className="row">
-              {this.state.history.map(his => {
+              {this.state.dragons.map(dra => {
                 return (
                   <div className="col-3  m-1 bg-light border-dark">
-                    <p>{his.title}</p> <br />
-                    <p> event date:{his.event_date}</p>
+                    <p>{dra.name}</p> <br />
+                    <p> type: {dra.type}</p>
+                    <p> type: {dra.thrusters_type} </p>
+                    <p> dry: {dra.dry_mass_kg}</p>
                   </div>
                 );
               })}
@@ -45,4 +47,4 @@ class History extends Component {
   }
 }
 
-export default History;
+export default Dragons;

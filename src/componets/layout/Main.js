@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
-import Mission from "./Mission";
-import History from "./History";
-import Cores from "./Cores";
-import Capsules from "./Capsules";
-import Dragons from "./Dragons";
-import Info from "./info";
+import Mission from "../Mission.js";
+import History from "../History.js";
+import Cores from "../Cores.js";
+import Capsules from "../Capsules.js";
+import Dragons from "../Dragons.js";
+import Info from "../info.js";
 
 import "./Main.css";
 

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./Missions.css";
-import { fechcores } from "./services/fetchcores";
+import { fechcores } from "../services/fetchcores";
 class Cores extends Component {
   constructor(props) {
     super(props);
