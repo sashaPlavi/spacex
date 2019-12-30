@@ -6,6 +6,7 @@ import Cores from "../Cores.js";
 import Capsules from "../Capsules.js";
 import Dragons from "../Dragons.js";
 import Info from "../info.js";
+import LandingPad from "../LandingPad.js";
 
 import "./Main.css";
 
@@ -20,6 +21,7 @@ class Main extends Component {
           <Route path="/capsules" component={Capsules} />
           <Route path="/dragons" component={Dragons} />
           <Route path="/info" component={Info} />
+          <Route path="/LandingPad" component={LandingPad} />
         </Switch>
         <p>this is main</p>
       </div>

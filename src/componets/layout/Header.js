@@ -33,13 +33,13 @@ function Header() {
             <a className="dropdown-item" href="/Info">
               Info
             </a>
-            <a className="dropdown-item" href="/Landing Pads">
+            <a className="dropdown-item" href="/LandingPad">
               Landing Pads
             </a>
             <a className="dropdown-item" href="/Launches">
               Launches
             </a>
-            <a className="dropdown-item" href="/Launch Pads">
+            <a className="dropdown-item" href="/LaunchPads">
               Launch Pads
             </a>
             <p className="dropdown-item">
