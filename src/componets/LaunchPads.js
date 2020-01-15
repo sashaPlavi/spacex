@@ -1,35 +1,35 @@
 import React, { Component } from "react";
-//import "./Missions.css";
-import { fechLandingpads } from "../services/fechLandingPads";
-class LandingPad extends Component {
+
+import { fechLaunchpads } from "../services/fecthLaunchpads";
+class LaunchPads extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      landingP: {}
+      launchP: {}
     };
   }
 
   componentDidMount() {
-    this.getLandingP();
+    this.getLaunchP();
   }
 
-  getLandingP() {
-    fechLandingpads.landingP().then(res => {
-      this.setState({ landingP: res });
+  getLaunchP() {
+    fechLaunchpads.launchP().then(res => {
+      this.setState({ launchP: res });
     });
   }
   render() {
-    console.log(this.state.landingP);
+    console.log(this.state.launchP[0]);
 
-    if (this.state.landingP[0]) {
+    if (this.state.launchP[0]) {
       return (
         <div className="missons">
           have somthing
           <div className="container">
             <div className="row">
-              {this.state.landingP.map(landing => {
+              {this.state.launchP.map(landing => {
                 return (
-                  <div className="col-4  mb-1">
+                  <div className="col-4  mb-1" key={landing.id}>
                     <div className="card h-100 ">
                       <div className="card-body ">
                         <h5 className="card-title">
@@ -55,4 +55,4 @@ class LandingPad extends Component {
   }
 }
 
-export default LandingPad;
+export default LaunchPads;

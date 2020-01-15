@@ -1,9 +1,9 @@
 import Axios from "axios";
-import MyLandingP from "../enteties/myLandings";
+import MyLandingP from "../enteties/myLandingp";
 
-class FechLanding {
+class FechLandingPads {
   landingP = () => {
-    const url = "https://api.spacexdata.com/v3/launchpads";
+    const url = "https://api.spacexdata.com/v3/landpads";
     return Axios.get(url).then(apiLandings => {
       const landings = apiLandings.data.map(cop => new MyLandingP(cop));
       console.log(apiLandings);
@@ -14,4 +14,4 @@ class FechLanding {
   };
 }
 
-export const fechLandings = new FechLanding();
+export const fechLandingpads = new FechLandingPads();

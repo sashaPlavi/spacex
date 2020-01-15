@@ -8,6 +8,8 @@ import Dragons from "../Dragons.js";
 import Info from "../info.js";
 import LandingPad from "../LandingPad.js";
 import Launches from "../Launches.js";
+import LaunchPads from "../LaunchPads.js";
+import Payloads from "../Payloads.js";
 import "./Main.css";
 
 class Main extends Component {
@@ -23,6 +25,8 @@ class Main extends Component {
           <Route path="/info" component={Info} />
           <Route path="/LandingPad" component={LandingPad} />
           <Route path="/Launches" component={Launches} />
+          <Route path="/LaunchPads" component={LaunchPads} />
+          <Route path="/Payloads" component={Payloads} />
         </Switch>
         <p>this is main</p>
       </div>

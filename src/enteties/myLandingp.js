@@ -1,4 +1,4 @@
-class MyLandings {
+class MyLandingp {
   constructor(apiLnadings) {
     this.id = apiLnadings.id;
     this.status = apiLnadings.status;
@@ -7,4 +7,4 @@ class MyLandings {
   }
 }
 
-export default MyLandings;
+export default MyLandingp;
