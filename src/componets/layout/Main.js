@@ -10,6 +10,8 @@ import LandingPad from "../LandingPad.js";
 import Launches from "../Launches.js";
 import LaunchPads from "../LaunchPads.js";
 import Payloads from "../Payloads.js";
+import Rockets from "../Rockets.js";
+import Ships from "../Ships.js";
 import "./Main.css";
 
 class Main extends Component {
@@ -27,6 +29,8 @@ class Main extends Component {
           <Route path="/Launches" component={Launches} />
           <Route path="/LaunchPads" component={LaunchPads} />
           <Route path="/Payloads" component={Payloads} />
+          <Route path="/Rockets" component={Rockets} />
+          <Route path="/Ships" component={Ships} />
         </Switch>
         <p>this is main</p>
       </div>
