@@ -6,9 +6,9 @@ function Header() {
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="dropdown">
+        <div className="dropdown">
           <button
-            class="btn btn-secondary dropdown-toggle"
+            className="btn btn-secondary dropdown-toggle"
             type="button"
             id="dropdownMenuButton"
             data-toggle="dropdown"
@@ -17,7 +17,7 @@ function Header() {
           >
             spacex
           </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
             <a className="dropdown-item" href="/capsules">
               Capsules
             </a>

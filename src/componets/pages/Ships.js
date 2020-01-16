@@ -6,7 +6,7 @@ const Ships = () => {
   const [ships, setShips] = useState([]);
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const [itemsPerPage, setItemstPerPage] = useState(5);
+  const [itemsPerPage] = useState(5);
 
   useEffect(() => {
     const getShips = () => {
@@ -23,12 +23,16 @@ const Ships = () => {
   const indexOfFirstShip = indexOfLastShip - itemsPerPage;
   const curentShips = ships.slice(indexOfFirstShip, indexOfLastShip);
   console.log(curentShips);
-
+  const paginate = pageNumber => setCurrentPage(pageNumber);
   return (
     <div className="container mt-5">
       <h1 className="text-primary mb-3">Ships</h1>
       <Cards ships={curentShips} loading={loading} />
-      <Pagination itemsPerPage={itemsPerPage} totalItems={ships.length} />
+      <Pagination
+        itemsPerPage={itemsPerPage}
+        totalItems={ships.length}
+        paginate={paginate}
+      />
     </div>
   );
 };
