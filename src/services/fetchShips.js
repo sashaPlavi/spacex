@@ -6,10 +6,10 @@ class FechShips {
     const url = "https://api.spacexdata.com/v3/ships";
     return Axios.get(url).then(apiships => {
       const ship = apiships.data.map(cop => new MyShips(cop));
-      //console.log(apicapsules);
+      console.log(apiships);
 
       return ship;
-      //console.log(res.data[0].mission_name);
+      //console.log(ship);
     });
   };
 }

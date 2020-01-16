@@ -1,44 +1,44 @@
 import React, { Component } from "react";
 //import "./Missions.css";
-import { fechLandingpads } from "../services/fechLandingPads";
-class LandingPad extends Component {
+import { fechLaunches } from "../../services/fechLaunches";
+class Launches extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      landingP: {}
+      launches: {}
     };
   }
 
   componentDidMount() {
-    this.getLandingP();
+    this.getLaunches();
   }
 
-  getLandingP() {
-    fechLandingpads.landingP().then(res => {
-      this.setState({ landingP: res });
+  getLaunches() {
+    fechLaunches.launches().then(res => {
+      this.setState({ launches: res });
     });
   }
   render() {
-    console.log(this.state.landingP);
+    console.log(this.state.launches);
 
-    if (this.state.landingP[0]) {
+    if (this.state.launches[0]) {
       return (
         <div className="missons">
           have somthing
           <div className="container">
             <div className="row">
-              {this.state.landingP.map(landing => {
+              {this.state.launches.map(launch => {
                 return (
                   <div className="col-4  mb-1">
                     <div className="card h-100 ">
                       <div className="card-body ">
                         <h5 className="card-title">
-                          location name: {landing.location}
+                          launching name: {launch.mission_name}
                           <br></br>
-                          status: {landing.status}
+                          flight number: {launch.flight_number}
                         </h5>
                         <h6 className="card-subtitle  text-muted">
-                          region: {landing.region}
+                          year: {launch.launch_year}
                         </h6>
                       </div>
                     </div>
@@ -55,4 +55,4 @@ class LandingPad extends Component {
   }
 }
 
-export default LandingPad;
+export default Launches;

@@ -1,44 +1,45 @@
 import React, { Component } from "react";
 
-import { fechpayloads } from "../services/fetchPayloads";
-class Payloads extends Component {
+import { fechLaunchpads } from "../../services/fecthLaunchpads";
+class LaunchPads extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      payloads: {}
+      launchP: {}
     };
   }
 
   componentDidMount() {
-    this.getPayloads();
+    this.getLaunchP();
   }
 
-  getPayloads() {
-    fechpayloads.payloads().then(res => {
-      this.setState({ payloads: res });
+  getLaunchP() {
+    fechLaunchpads.launchP().then(res => {
+      this.setState({ launchP: res });
     });
   }
   render() {
-    console.log(this.state.payloads);
+    console.log(this.state.launchP[0]);
 
-    if (this.state.payloads[0]) {
+    if (this.state.launchP[0]) {
       return (
         <div className="missons">
+          have somthing
           <div className="container">
             <div className="row">
-              have somthing
-              {this.state.payloads.map((payload, ind) => {
+              {this.state.launchP.map(landing => {
                 return (
-                  <div className="col-4  mb-1" key={ind}>
+                  <div className="col-4  mb-1" key={landing.id}>
                     <div className="card h-100 ">
                       <div className="card-body ">
                         <h5 className="card-title">
-                          payload name: {payload.payload_id}
+                          location name: {landing.location}
+                          <br></br>
+                          status: {landing.status}
                         </h5>
                         <h6 className="card-subtitle  text-muted">
-                          manufacturers: {payload.nationality}
+                          region: {landing.region}
                         </h6>
-                        <p className=" overflow-auto">orbit: {payload.orbit}</p>
                       </div>
                     </div>
                   </div>
@@ -54,4 +55,4 @@ class Payloads extends Component {
   }
 }
 
-export default Payloads;
+export default LaunchPads;

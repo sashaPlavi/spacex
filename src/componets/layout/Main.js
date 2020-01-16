@@ -1,18 +1,18 @@
 import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
-import Mission from "../Mission.js";
-import History from "../History.js";
-import Cores from "../Cores.js";
-import Capsules from "../Capsules.js";
-import Dragons from "../Dragons.js";
-import Info from "../info.js";
-import LandingPad from "../LandingPad.js";
-import Launches from "../Launches.js";
-import LaunchPads from "../LaunchPads.js";
-import Payloads from "../Payloads.js";
-import Rockets from "../Rockets.js";
-import Ships from "../Ships.js";
-import Raodster from "../Raodster.js";
+import Mission from "../pages/Mission";
+import History from "../pages/History";
+import Cores from "../pages/Cores.js";
+import Capsules from "../pages/Capsules.js";
+import Dragons from "../pages/Dragons.js";
+import Info from "../pages/info.js";
+import LandingPad from "../pages/LandingPad.js";
+import Launches from "../pages/Launches.js";
+import LaunchPads from "../pages/LaunchPads.js";
+import Payloads from "../pages/Payloads.js";
+import Rockets from "../pages/Rockets.js";
+import Ships from "../pages/Ships.js";
+import Raodster from "../pages/Raodster.js";
 import "./Main.css";
 
 class Main extends Component {

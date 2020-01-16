@@ -1,39 +1,39 @@
 import React, { Component } from "react";
 import "./Missions.css";
-import { fechcapsules } from "../services/fetchcapsules";
-class Capsules extends Component {
+import { fechdragons } from "../../services/fetchdragons";
+class Dragons extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      capsules: {}
+      dragons: {}
     };
   }
 
   componentDidMount() {
-    this.getCapsules();
+    this.getCores();
   }
 
-  getCapsules() {
-    fechcapsules.capsules().then(res => {
-      this.setState({ capsules: res });
+  getCores() {
+    fechdragons.dragons().then(res => {
+      this.setState({ dragons: res });
     });
   }
   render() {
-    console.log(this.state.capsules);
+    console.log(this.state.dragons);
 
-    if (this.state.capsules[0]) {
+    if (this.state.dragons[0]) {
       return (
         <div className="history">
           have something
           <div className="container">
             <div className="row">
-              {this.state.capsules.map(cap => {
+              {this.state.dragons.map(dra => {
                 return (
                   <div className="col-3  m-1 bg-light border-dark">
-                    <p>{cap.capsule_id}</p> <br />
-                    <p> reuse: {cap.reuse_count}</p>
-                    <p> landings: {cap.landings}</p>
-                    <p> status: {cap.status}</p>
+                    <p>{dra.name}</p> <br />
+                    <p> type: {dra.type}</p>
+                    <p> type: {dra.thrusters_type} </p>
+                    <p> dry: {dra.dry_mass_kg}</p>
                   </div>
                 );
               })}
@@ -47,4 +47,4 @@ class Capsules extends Component {
   }
 }
 
-export default Capsules;
+export default Dragons;

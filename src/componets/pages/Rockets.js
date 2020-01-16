@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import { fechrocket } from "../services/fechRockets";
+import { fechrocket } from "../../services/fechRockets";
 class Rockets extends Component {
   constructor(props) {
     super(props);

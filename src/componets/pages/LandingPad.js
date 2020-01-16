@@ -1,44 +1,44 @@
 import React, { Component } from "react";
 //import "./Missions.css";
-import { fechLaunches } from "../services/fechLaunches";
-class Launches extends Component {
+import { fechLandingpads } from "../../services/fechLandingPads";
+class LandingPad extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      launches: {}
+      landingP: {}
     };
   }
 
   componentDidMount() {
-    this.getLaunches();
+    this.getLandingP();
   }
 
-  getLaunches() {
-    fechLaunches.launches().then(res => {
-      this.setState({ launches: res });
+  getLandingP() {
+    fechLandingpads.landingP().then(res => {
+      this.setState({ landingP: res });
     });
   }
   render() {
-    console.log(this.state.launches);
+    console.log(this.state.landingP);
 
-    if (this.state.launches[0]) {
+    if (this.state.landingP[0]) {
       return (
         <div className="missons">
           have somthing
           <div className="container">
             <div className="row">
-              {this.state.launches.map(launch => {
+              {this.state.landingP.map(landing => {
                 return (
                   <div className="col-4  mb-1">
                     <div className="card h-100 ">
                       <div className="card-body ">
                         <h5 className="card-title">
-                          launching name: {launch.mission_name}
+                          location name: {landing.location}
                           <br></br>
-                          flight number: {launch.flight_number}
+                          status: {landing.status}
                         </h5>
                         <h6 className="card-subtitle  text-muted">
-                          year: {launch.launch_year}
+                          region: {landing.region}
                         </h6>
                       </div>
                     </div>
@@ -55,4 +55,4 @@ class Launches extends Component {
   }
 }
 
-export default Launches;
+export default LandingPad;
