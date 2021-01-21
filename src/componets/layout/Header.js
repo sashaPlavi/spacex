@@ -1,64 +1,28 @@
-import React from "react";
-import "./Header.css";
-import { Link } from "react-router-dom";
+import React from 'react';
+import './Header.css';
+import { Dropdown } from 'react-bootstrap';
 
 function Header() {
   return (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div className="dropdown">
-          <button
-            className="btn btn-secondary dropdown-toggle"
-            type="button"
-            id="dropdownMenuButton"
-            data-toggle="dropdown"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >
-            spacex
-          </button>
-          <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a className="dropdown-item" href="/capsules">
-              Capsules
-            </a>
-            <a className="dropdown-item" href="/cores">
-              Cores
-            </a>
-            <a className="dropdown-item" href="/dragons">
-              Dragons
-            </a>
-            <a className="dropdown-item" href="/History">
-              History
-            </a>
-            <a className="dropdown-item" href="/Info">
-              Info
-            </a>
-            <a className="dropdown-item" href="/LandingPad">
-              Landing Pads
-            </a>
-            <a className="dropdown-item" href="/Launches">
-              Launches
-            </a>
-            <a className="dropdown-item" href="/LaunchPads">
-              Launch Pads
-            </a>
-            <p className="dropdown-item">
-              <Link to="/mission"> Missions </Link>
-            </p>
-            <a className="dropdown-item" href="/Payloads">
-              Payloads
-            </a>
-            <a className="dropdown-item" href="/Rockets">
-              Rockets
-            </a>
-            <a className="dropdown-item" href="/Roadster">
-              Roadster
-            </a>
-            <a className="dropdown-item" href="/Ships">
-              Ships
-            </a>
-          </div>
-        </div>
+      <nav className="bg-dark">
+        <Dropdown className="pl-3 p-2">
+          <Dropdown.Toggle id="dropdown-basic-button">Spacex</Dropdown.Toggle>
+
+          <Dropdown.Menu>
+            <Dropdown.Item href="/cores">Cores</Dropdown.Item>
+            <Dropdown.Item href="/dragons">Dragons</Dropdown.Item>
+            <Dropdown.Item href="/History">History</Dropdown.Item>
+            <Dropdown.Item href="/Info">Info</Dropdown.Item>
+            <Dropdown.Item href="/LandingPad">Landing Pads</Dropdown.Item>
+            <Dropdown.Item href="/Launches">Launches</Dropdown.Item>
+            <Dropdown.Item href="/mission"> Missions</Dropdown.Item>
+            <Dropdown.Item href="/Payloads">Payloads</Dropdown.Item>
+            <Dropdown.Item href="/Rockets">Rockets</Dropdown.Item>
+            <Dropdown.Item href="/Roadster">Roadster</Dropdown.Item>
+            <Dropdown.Item href="/Ships">Ships</Dropdown.Item>
+          </Dropdown.Menu>
+        </Dropdown>
       </nav>
     </div>
   );

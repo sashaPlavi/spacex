@@ -1,11 +1,11 @@
-import React, { Component } from "react";
-import "./Missions.css";
-import { fechcapsules } from "../../services/fetchcapsules";
+import React, { Component } from 'react';
+
+import { fechcapsules } from '../../services/fetchcapsules';
 class Capsules extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      capsules: {}
+      capsules: {},
     };
   }
 
@@ -14,7 +14,7 @@ class Capsules extends Component {
   }
 
   getCapsules() {
-    fechcapsules.capsules().then(res => {
+    fechcapsules.capsules().then((res) => {
       this.setState({ capsules: res });
     });
   }
@@ -27,7 +27,7 @@ class Capsules extends Component {
           have something
           <div className="container">
             <div className="row">
-              {this.state.capsules.map(cap => {
+              {this.state.capsules.map((cap) => {
                 return (
                   <div className="col-3  m-1 bg-light border-dark">
                     <p>{cap.capsule_id}</p> <br />

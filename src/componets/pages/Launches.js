@@ -1,11 +1,11 @@
-import React, { Component } from "react";
-//import "./Missions.css";
-import { fechLaunches } from "../../services/fechLaunches";
+import React, { Component } from 'react';
+
+import { fechLaunches } from '../../services/fechLaunches';
 class Launches extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      launches: {}
+      launches: {},
     };
   }
 
@@ -14,7 +14,7 @@ class Launches extends Component {
   }
 
   getLaunches() {
-    fechLaunches.launches().then(res => {
+    fechLaunches.launches().then((res) => {
       this.setState({ launches: res });
     });
   }
@@ -27,7 +27,7 @@ class Launches extends Component {
           have somthing
           <div className="container">
             <div className="row">
-              {this.state.launches.map(launch => {
+              {this.state.launches.map((launch) => {
                 return (
                   <div className="col-4  mb-1">
                     <div className="card h-100 ">

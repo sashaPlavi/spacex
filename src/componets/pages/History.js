@@ -1,11 +1,11 @@
-import React, { Component } from "react";
-import "./Missions.css";
-import { fechhistory } from "../../services/fetchHistory";
+import React, { Component } from 'react';
+
+import { fechhistory } from '../../services/fetchHistory';
 class History extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      history: {}
+      history: {},
     };
   }
 
@@ -14,7 +14,7 @@ class History extends Component {
   }
 
   getHistory() {
-    fechhistory.history().then(res => {
+    fechhistory.history().then((res) => {
       this.setState({ history: res });
     });
   }
@@ -27,7 +27,7 @@ class History extends Component {
           have something
           <div className="container">
             <div className="row">
-              {this.state.history.map(his => {
+              {this.state.history.map((his) => {
                 return (
                   <div className="col-3  m-1 bg-light border-dark">
                     <p>{his.title}</p> <br />

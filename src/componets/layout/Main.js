@@ -1,19 +1,19 @@
-import React, { Component } from "react";
-import { Route, Switch } from "react-router-dom";
-import Mission from "../pages/Mission";
-import History from "../pages/History";
-import Cores from "../pages/Cores.js";
-import Capsules from "../pages/Capsules.js";
-import Dragons from "../pages/Dragons.js";
-import Info from "../pages/info.js";
-import LandingPad from "../pages/LandingPad.js";
-import Launches from "../pages/Launches.js";
-import LaunchPads from "../pages/LaunchPads.js";
-import Payloads from "../pages/Payloads.js";
-import Rockets from "../pages/Rockets.js";
-import Ships from "../pages/Ships.js";
-import Raodster from "../pages/Raodster.js";
-import "./Main.css";
+import React, { Component } from 'react';
+import { Route, Switch } from 'react-router-dom';
+import Mission from '../pages/Mission';
+import History from '../pages/History';
+import Cores from '../pages/Cores.js';
+import Capsules from '../pages/Capsules.js';
+import Dragons from '../pages/Dragons.js';
+import Info from '../pages/Info.js';
+import LandingPad from '../pages/LandingPad.js';
+import Launches from '../pages/Launches.js';
+import LaunchPads from '../pages/LaunchPads.js';
+import Payloads from '../pages/Payloads.js';
+import Rockets from '../pages/Rockets.js';
+import Ships from '../pages/Ships.js';
+import Raodster from '../pages/Raodster.js';
+import './Main.css';
 
 class Main extends Component {
   render() {

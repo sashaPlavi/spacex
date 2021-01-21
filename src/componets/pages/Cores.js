@@ -1,11 +1,11 @@
-import React, { Component } from "react";
-import "./Missions.css";
-import { fechcores } from "../../services/fetchcores";
+import React, { Component } from 'react';
+
+import { fechcores } from '../../services/fetchcores';
 class Cores extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      cores: {}
+      cores: {},
     };
   }
 
@@ -14,7 +14,7 @@ class Cores extends Component {
   }
 
   getCores() {
-    fechcores.cores().then(res => {
+    fechcores.cores().then((res) => {
       this.setState({ cores: res });
     });
   }
@@ -27,7 +27,7 @@ class Cores extends Component {
           have something
           <div className="container">
             <div className="row">
-              {this.state.cores.map(cor => {
+              {this.state.cores.map((cor) => {
                 return (
                   <div className="col-3  m-1 bg-light border-dark">
                     <p>{cor.capsule_id}</p> <br />

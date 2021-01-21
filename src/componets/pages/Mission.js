@@ -1,11 +1,11 @@
-import React, { Component } from "react";
-import "./Missions.css";
-import { fechMission } from "../../services/fetchMission";
+import React, { Component } from 'react';
+
+import { fechMission } from '../../services/fetchMission';
 class Mission extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      missions: {}
+      missions: {},
     };
   }
 
@@ -14,7 +14,7 @@ class Mission extends Component {
   }
 
   getMission() {
-    fechMission.mission().then(res => {
+    fechMission.mission().then((res) => {
       this.setState({ missions: res });
     });
   }
@@ -24,7 +24,7 @@ class Mission extends Component {
         <div className="missons">
           <div className="container">
             <div className="row">
-              {this.state.missions.map(mission => {
+              {this.state.missions.map((mission) => {
                 return (
                   <div className="col-4  mb-1">
                     <div className="card h-100 ">

@@ -1,11 +1,11 @@
-import React, { Component } from "react";
-import "./Missions.css";
-import { fechdragons } from "../../services/fetchdragons";
+import React, { Component } from 'react';
+
+import { fechdragons } from '../../services/fetchdragons';
 class Dragons extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      dragons: {}
+      dragons: {},
     };
   }
 
@@ -14,7 +14,7 @@ class Dragons extends Component {
   }
 
   getCores() {
-    fechdragons.dragons().then(res => {
+    fechdragons.dragons().then((res) => {
       this.setState({ dragons: res });
     });
   }
@@ -27,7 +27,7 @@ class Dragons extends Component {
           have something
           <div className="container">
             <div className="row">
-              {this.state.dragons.map(dra => {
+              {this.state.dragons.map((dra) => {
                 return (
                   <div className="col-3  m-1 bg-light border-dark">
                     <p>{dra.name}</p> <br />

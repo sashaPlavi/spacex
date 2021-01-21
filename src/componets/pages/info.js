@@ -1,11 +1,11 @@
-import React, { Component } from "react";
-import "./Info.css";
-import { fetchInfo } from "../../services/fetchInfo";
+import React, { Component } from 'react';
+
+import { fetchInfo } from '../../services/fetchInfo';
 class Info extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      info: {}
+      info: {},
     };
   }
 
@@ -14,7 +14,7 @@ class Info extends Component {
   }
 
   getInfo() {
-    fetchInfo.infos().then(res => {
+    fetchInfo.infos().then((res) => {
       this.setState({ info: res });
     });
   }
@@ -26,7 +26,7 @@ class Info extends Component {
     const items = [];
 
     //const [keys, value] of info.entries();
-    console.log("items:" + items);
+    console.log('items:' + items);
 
     for (let [key, value] of Object.entries(info)) {
       console.log(`${key}: ${value}`);
