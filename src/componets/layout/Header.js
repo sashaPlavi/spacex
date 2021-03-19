@@ -7,7 +7,9 @@ function Header() {
     <div>
       <nav className="bg-dark">
         <Dropdown className="pl-3 p-2">
-          <Dropdown.Toggle id="dropdown-basic-button">Spacex</Dropdown.Toggle>
+          <Dropdown.Toggle variant="Secondary" id="dropdown-basic">
+            Spacex
+          </Dropdown.Toggle>
 
           <Dropdown.Menu>
             <Dropdown.Item href="/cores">Cores</Dropdown.Item>

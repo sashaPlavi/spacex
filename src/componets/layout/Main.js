@@ -18,23 +18,24 @@ import './Main.css';
 class Main extends Component {
   render() {
     return (
-      <div className="main">
-        <Switch>
-          <Route path="/mission" component={Mission} />
-          <Route path="/history" component={History} />
-          <Route path="/cores" component={Cores} />
-          <Route path="/capsules" component={Capsules} />
-          <Route path="/dragons" component={Dragons} />
-          <Route path="/info" component={Info} />
-          <Route path="/LandingPad" component={LandingPad} />
-          <Route path="/Launches" component={Launches} />
-          <Route path="/LaunchPads" component={LaunchPads} />
-          <Route path="/Payloads" component={Payloads} />
-          <Route path="/Rockets" component={Rockets} />
-          <Route path="/Ships" component={Ships} />
-          <Route path="/Roadster" component={Raodster} />
-        </Switch>
-        <p>this is main</p>
+      <div className="main ">
+        <div className="container">
+          <Switch>
+            <Route path="/mission" component={Mission} />
+            <Route path="/history" component={History} />
+            <Route path="/cores" component={Cores} />
+            <Route path="/capsules" component={Capsules} />
+            <Route path="/dragons" component={Dragons} />
+            <Route path="/info" component={Info} />
+            <Route path="/LandingPad" component={LandingPad} />
+            <Route path="/Launches" component={Launches} />
+            <Route path="/LaunchPads" component={LaunchPads} />
+            <Route path="/Payloads" component={Payloads} />
+            <Route path="/Rockets" component={Rockets} />
+            <Route path="/Ships" component={Ships} />
+            <Route path="/Roadster" component={Raodster} />
+          </Switch>
+        </div>
       </div>
     );
   }
